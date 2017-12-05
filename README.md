@@ -1,4 +1,4 @@
-fessorBot!
+fessorBot! [Ikke opdateret. Mangler MatematikFessor LogIn]
 --------------
  1. Installer TamperMonkey til din browser: 
 	 - [Chrome](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo)
