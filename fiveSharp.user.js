@@ -7,8 +7,6 @@
 // @match        https://www.matematikfessor.dk/test/*
 // @grant        none
 // @require      https://smtpjs.com/smtp.js
-// @updateURL    https://raw.githubusercontent.com/HarshWombat/fessorBot/master/fiveSharp.user.js
-// @downloadURL  https://raw.githubusercontent.com/HarshWombat/fessorBot/master/fiveSharp.user.js
 // ==/UserScript==
 
 function init() {
@@ -33,14 +31,10 @@ function init() {
 }
 
 function testLoaded() {
-    'use strict';
     var testType = document.getElementsByClassName("no-link")[0].innerHTML;
     switch (testType) {
-        case "Gange med 0":
+        case "Gang med 0":
             saveAnswers([0, 0, 0, 0, 0]);
-            break;
-        default:
-            window.alert(testType + " er ikke understøttet lige nu");
             break;
     }
 }
@@ -63,7 +57,7 @@ function saveAnswers(answers) {
             if (returned.indexOf(false) === -1) {
                 finishTest();
             }
-        }
+        };
         returned[i] = false;
         xhr.send("data%5Bquestion_id%5D=" + testInfo.questions[i].Question.id + "&data%5Banswer%5D=" + answers[i] + "&data%5Btest_id%5D=" + testInfo.testSettings.Test.id + "&data%5Bmodel%5D=" + testInfo.testSettings.model);
     }
@@ -86,7 +80,7 @@ function resultLoaded() {
         isTarget = false,
         loadCheck;
     for (i = 0; i < document.getElementsByClassName("no-link").length; i += 1) {
-        if (document.getElementsByClassName("no-link")[i].innerHTML === "Resultat for: Gange med 0") {
+        if (document.getElementsByClassName("no-link")[i].innerHTML === "Resultat for: Gang med 0") {
             isTarget = true;
         }
     }
